@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emre KAYA</title>
+    <link rel="icon" type="image/x-icon" href="assets/e-wing-logo-design.ico">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="script" href="script.js">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <style>
+
+        font-face {
+            font-family: Geosans;
+            src: url('./assets/GeosansLight.ttf');
+        }
+
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
+        /* Set the width of the sidebar to 120px */
+        a {
+            text-decoration: none;
+        }
+
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+
+        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+        #main {
+            margin-left: 120px
+        }
+       #about{
+
+       }
+
+        /* Remove margins from "page content" on small screens */
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
+        }
+        @media   screen  and (max-width:830px) and (min-width:760px) {
+            #contact{
+                margin-left: 140px;
+                margin-right: 10px;
+            }
+
+        }
+        @media   screen  and (max-width:1105px) and (min-width:1024px) {
+            #contact{
+                margin-left: 140px;
+                margin-right: 10px;
+            }
+
+        }
+
+        footer {
+            justify-content: space-evenly;
+            align-items: center;
+            display: flex;
+        }
+    </style>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("K88uY8kPb0gvVwcdx");
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                this.contact_number.value = Math.random() * 100000 | 0;
+
+                emailjs.sendForm('service_fgqfodi', 'template_jo9ek2v', this)
+                    .then(function () {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Sended',
+                            text: 'Mail sended succesfully!',
+                            confirmButtonColor: '#8CD4F5',
+                        })
+                        console.log('SUCCESS!');
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body class="w3-black">
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <!-- Avatar image in top left corner -->
+    <img src="/assets/my-logo.png" style="width:100%">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+    </a>
+    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-user w3-xxlarge"></i>
+        <p>ABOUT</p>
+    </a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-envelope w3-xxlarge"></i>
+        <p>CONTACT</p>
+    </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+        <a href="#" class="w3-bar-item w3-button" style="width:33% !important">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button" style="width:33% !important">ABOUT</a>
+        <a href="#contact" class="w3-bar-item w3-button" style="width:33% !important">CONTACT</a>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+    <!-- Header/Home -->
+    <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+        <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Emre Kaya.</h1>
+        <p>Software Devoloper</p>
+        <img src="/assets/ppmre3.jpeg" alt="boy" class="w3-image" width="992" height="1108">
+    </header>
+
+    <!-- About Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+        <h2 class="w3-text-light-grey">Emre KAYA</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p>I'm a starter-junior computer engineer with a passion for everything about software. I graduated from
+            Computer Engineering and Management Information Systems in Nisantasi University . Now I study Computer Science master's degree in University of Humanities and Economics in Lodz . Besides being a computer
+            engineer, I'm a good basketball player. Welcome to my page . I'm glad you're here !
+        </p>
+
+        <h2 class="w3-text-light-grey">Web Devolopment</h2>
+        <hr style="width:200px" class="w3-opacity">
+
+        <p>React.Js | JavaScript | HTMLL | CSS | SASS/SCSS | Bootstrap | </p>
+
+        <h2 class="w3-text-light-grey">Others</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p>C | C# | Java | Git</p>
+
+
+    </div>
+
+</div>
+<!-- End Portfolio Section -->
+</div>
+
+<!-- Contact Section -->
+<div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge "></i> Łódź , Poland / Istanbul ,
+            Turkey</p>
+        <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge "></i> Phone: +90 537 882 81 11</p>
+        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge "> </i> Email: kayae0693@gmail.com</p>
+    </div>
+    <br>
+    <p>Let's get in touch. Send me a message:</p>
+
+    <form id="contact-form">
+        <input type="hidden" name="contact_number">
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="name"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="email"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="message"></p>
+        <p>
+            <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            </button>
+        </p>
+    </form>
+    <!-- End Contact Section -->
+</div>
+
+<!-- Footer -->
+
+<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+
+    <a href="https://www.linkedin.com/in/emre-kaya-882a95212/" class=" social-media fa fa-linkedin w3-hover-opacity"></a>
+    <a href="https://github.com/emrebruzzi" class=" social-media fa fa-github w3-hover-opacity"></a>
+    <a href="https://www.instagram.com/emrebruzzi/?hl=tr" class=" social-media fa fa-instagram w3-hover-opacity"></a>
+    <!-- End footer -->
+</footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
